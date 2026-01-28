@@ -98,7 +98,7 @@ par(mfrow = c(1, 2), mar = c(8, 5, 4, 2))
 plot_matrix_discrete(mat1, main = "(A)")
 plot_matrix_discrete(mat,  main = "(B)")
 
-########################################################################
+
 ##             modularity and nestedness
 ###################################################################
 
@@ -138,7 +138,7 @@ plotModuleWeb(mod,
 par(op)
 ###############################################################
 # Function to build matrix from data
-###############################################################
+
 make_matrix <- function(data) {
   plants <- sort(unique(na.omit(data$Plants)))
   polls  <- sort(unique(na.omit(data$Scientificn)))
@@ -158,7 +158,7 @@ nectar_data <- droplevels(subset(pp.data, Activity == "Nectaring"))
 
 ###############################################################
 # Bootstrap NODF and Modularity (1000 runs) for PF and IDH
-###############################################################
+
 bootstrap_network <- function(data, n_iter = 1000) {
   nodf_vals <- numeric(n_iter)
   mod_vals  <- numeric(n_iter)
@@ -194,7 +194,7 @@ results_IDH <- bootstrap_network(subset(nectar_data, FT == "IDH"), n_iter = 1000
 
 ###############################################################
 # Display summary results
-###############################################################
+
 cat("\n--- Primary Forest (PF) ---\n")
 cat("NODF mean ± 95% CI:", results_PF$NODF_mean, "(", 
     round(results_PF$NODF_CI[1], 2), "-", round(results_PF$NODF_CI[2], 2), ")\n")
@@ -227,7 +227,7 @@ write.csv(results_df, "Bootstrap_1000_PFvsIDH.csv", row.names = FALSE)
 
 # ########################################################
 # NMDS + PERMANOVA + BETADISPER Summary (Nectaring only)
-# ###############################################################
+
 
 # --- Load packages ---
 library(dplyr)
@@ -345,7 +345,7 @@ polls_res$adonis
 
 ##############################################################
 #############_____________nmds____plot
-#####################################################
+
 library(vegan)
 library(ggplot2)
 library(dplyr)
@@ -504,7 +504,7 @@ combine_and_print_safe(p_plants, p_polls)
 
 #####################################################################
 # Shannon diversity (H') and Evenness (Pielou J) for Plants & Pollinators
-#########################################################################3
+
 # clean names
 pp.data <- pp.data %>% rename_with(~ gsub("[^A-Za-z0-9_]", "_", .x))
 
@@ -650,6 +650,7 @@ print(p_nodf)
 # Save to files
 ggsave("Nestedness_NODF_CI.png", p_nodf, width = 6, height = 4, dpi = 300)
 ggsave("Nestedness_NODF_CI.pdf", p_nodf, width = 6, height = 4)
+
 
 
 
