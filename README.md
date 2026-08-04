@@ -16,7 +16,7 @@ from the Eastern Himalaya.
   - PN (Interaction_frequency)
   - Activity (pollinator's activity- Nectaring/Sitting/Basking)
 ### Code
-- `analysis.R`  
+- `PPN Analysis.R`  
   R script used to calculate network indices like nestedness and modularity, diversity indices, NMDS, PERMANOVA and to generate figures.
 ## Software
 - R version 4.5.2
