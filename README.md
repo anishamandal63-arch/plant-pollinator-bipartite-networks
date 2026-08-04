@@ -20,6 +20,6 @@ from the Eastern Himalaya.
   R script used to calculate network indices like nestedness and modularity, diversity indices, NMDS, PERMANOVA and to generate figures.
 ## Software
 - R version 4.5.2
-- Packages: vegan, bipartite, igraph, tidyverse
+- Packages: vegan, bipartite, igraph, tidyverse, iNEXT, betalinkr
   
 This repository is provided for peer review and reproducibility.
